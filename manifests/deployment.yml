@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: fastermikemaster 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fastermikemaster 
+    spec:
+      containers:
+        - name: fastermikemaster 
+          image: aakmiha1.azurecr.io/fastermikemaster
+          ports:
+          - containerPort: 80
