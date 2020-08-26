@@ -4,6 +4,7 @@ metadata:
   name: fast 
 spec:
   replicas: 1
+  selector:
   template:
     metadata:
       labels:
