@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: fast 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fast 
+    spec:
+      containers:
+        - name: fast 
+          image: aakmiha1.azurecr.io/fast
+          ports:
+          - containerPort: 80
