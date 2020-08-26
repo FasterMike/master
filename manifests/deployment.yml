@@ -13,7 +13,7 @@ spec:
         app: fast
     spec:
       containers:
-        - name: fastermikemaster
+        - name: fast
           image: aakmiha1.azurecr.io/fast
           ports:
           - containerPort: 80
