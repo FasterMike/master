@@ -1,3 +1,4 @@
+
 # Deploy to Azure Kubernetes Service
 # Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
@@ -12,7 +13,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'daee6009-ff85-4a83-a78e-95a3eacac35a'
-  imageRepository: 'aakmiha1.azurecr.io'
+  imageRepository: 'fastermikemaster'
   containerRegistry: 'aakmiha1.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
