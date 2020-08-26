@@ -1,17 +1,20 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: fast 
+  name: fastermikemaster
 spec:
   replicas: 1
   selector:
+    matchLabels:
+      app: fast
   template:
     metadata:
       labels:
-        app: fast 
+        app: fast
     spec:
       containers:
-        - name: fast 
+        - name: fastermikemaster
           image: aakmiha1.azurecr.io/fast
           ports:
           - containerPort: 80
+
