@@ -15,7 +15,7 @@ variables:
   imageRepository: 'imagefast'
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  tag: '$(Version)'
+  tag: '228'
   imagePullSecret: 'arcmiha81fb-auth'
 
   # Agent VM image name
@@ -75,5 +75,5 @@ stages:
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
-                $(containerRegistry)/$(imageRepository):$(tag)
+                $(containerRegistry)/$(imageRepository):latest
 
