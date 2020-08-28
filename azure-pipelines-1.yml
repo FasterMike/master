@@ -17,6 +17,7 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'aakmihaaa54-auth'
+  k8snamespace: 'azure'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -63,12 +64,14 @@ stages:
             inputs:
               action: createSecret
               secretName: $(imagePullSecret)
+              namespace: $(k8snamespace)
               dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
               
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
               action: deploy
+              namespace: $(k8snamespace)
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
