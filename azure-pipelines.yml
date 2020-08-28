@@ -15,7 +15,7 @@ variables:
   imageRepository: 'imagefast'
   containerRegistry: 'arcmiha.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: '$(Version)'
   imagePullSecret: 'arcmiha81fb-auth'
 
   # Agent VM image name
