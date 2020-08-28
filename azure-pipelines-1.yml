@@ -15,7 +15,7 @@ variables:
   imageRepository: 'fasterimage'
   containerRegistry: 'aakmiha.azurecr.io'
   dockerfilePath: '**/Dockerfile'
-  tag: '228'
+  tag: '$(Build.BuildId)'
   imagePullSecret: 'aakmiha5123fb31-auth'
 
   # Agent VM image name
@@ -35,11 +35,10 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: $(containerRegistry)/$(imageRepository)
+        repository: $(containerRegistry)/$(imageRepository):($tag)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        
           
     - upload: manifests
       artifact: manifests
