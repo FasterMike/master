@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: imagefast
-          image: arcmiha.azurecr.io/imagefast:latest
+          image: arcmiha.azurecr.io/imagefast:228
           ports:
           - containerPort: 80
 
