@@ -1,16 +1,20 @@
-apiVersion : apps/v1beta1
+apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: imagefast 
+  name: imagefast
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: imagefast
   template:
     metadata:
       labels:
-        app: imagefast 
+        app: imagefast
     spec:
       containers:
-        - name: imagefast 
-          image: arcmiha.azurecr.io/imagefast
+        - name: imagefast
+          image: arcmiha.azurecr.io/imagefast:latest
           ports:
           - containerPort: 80
+
