@@ -35,11 +35,11 @@ stages:
       displayName: Build and push an image to container registry
       inputs:
         command: buildAndPush
-        repository: arcmiha.azurecr.io/imagefast:$(tag)
+        repository: arcmiha.azurecr.io/imagefast
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-#        tags: |
-#          $(tag)
+        tags: |
+          $(tag)
           
     - upload: manifests
       artifact: manifests
