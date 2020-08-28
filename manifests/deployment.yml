@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fast
-          image: aakmiha1.azurecr.io/fast
+          image: aakmiha.azurecr.io.io/fast
           ports:
           - containerPort: 80
 
