@@ -17,4 +17,5 @@ spec:
           image: arcmiha.azurecr.io/imagefast:229
           ports:
           - containerPort: 80
-
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "while true; do sleep 30; done;" ]
